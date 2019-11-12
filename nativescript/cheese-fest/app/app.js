@@ -1,15 +1,14 @@
-require("./bundle-config");
+/*
+In NativeScript, the app.js file is the entry point to your application.
+You can use this file to perform app-level initialization, but the primary
+purpose of the file is to pass control to the app’s first module.
+*/
 
-const app = require("application");
+const application = require("tns-core-modules/application");
 
-/* ***********************************************************
-* The {N} Firebase plugin needs some initialization steps before it is ready
-* for use. Check out the initialization script at /shared/firebase.common.ts
-* along with more information about it.
-*************************************************************/
 require("./shared/firebase.common");
 
-app.start({ moduleName: "cheese/list-page" });
+application.run({ moduleName: "app-root" });
 
 /*
 Do not place any code after the application has been started as it will not
